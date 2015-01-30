@@ -6,7 +6,7 @@ It uses part of [https://github.com/peekabustudios/webcam-directive](webcam-dire
 
 ## Installation
 
-    bower install bc-qr-code
+    npm install https://github.com/Blockchain/bc-qr-code.git
 
 ## Development
 
