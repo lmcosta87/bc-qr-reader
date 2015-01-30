@@ -1,7 +1,7 @@
 module.exports = (grunt) ->
   
   grunt.initConfig
-    pkg: grunt.file.readJSON("bower.json")
+    pkg: grunt.file.readJSON("package.json")
     
     clean: {
       dist: ["dist"]
@@ -47,9 +47,9 @@ module.exports = (grunt) ->
         dest: 'build'
         ext: ".js"
         
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-coffee')
-  grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('../../grunt-contrib-concat')
+  grunt.loadNpmTasks('../../grunt-contrib-coffee')
+  grunt.loadNpmTasks('../../grunt-contrib-clean')
     
   grunt.registerTask "compile", ["coffee"]  
     

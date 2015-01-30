@@ -6,6 +6,7 @@ It uses part of [https://github.com/peekabustudios/webcam-directive](webcam-dire
 
 ## Installation
 
+    npm install --save grunt-contrib-concat grunt-contrib-clean grunt-contrib-coffee
     npm install https://github.com/Blockchain/bc-qr-code.git
 
 ## Development
