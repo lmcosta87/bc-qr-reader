@@ -10,6 +10,8 @@ walletApp.directive('bcQrReader', ($timeout) ->
     }
     template: '<div><webcam on-stream="onStream(stream)" on-access-denied="onError(err)" ng-if="active"></webcam><canvas id="qr-canvas"></canvas></div>'
     link: (scope, elem, attrs) ->
+      qrcode.callback = scope.onResult
+      
       scope.onStream = (stream) -> # I removed the second argument in webcam.js!
         # Evil (TODO: use a directive to manipulate the DOM):
         canvas = document.getElementById("qr-canvas")
