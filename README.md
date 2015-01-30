@@ -11,7 +11,9 @@ It uses part of [https://github.com/peekabustudios/webcam-directive](webcam-dire
 
 ## Usage
 
-Include dist/bc-qr-reader
+Include `dist/bc-qr-reader.js`
+
+    bc-qr-reader(active="cameraRequested", on-result="processURLfromQR" on-error="onError" camera-status="cameraIsOn")
 
 ## Development
 
