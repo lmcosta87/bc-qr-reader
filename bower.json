@@ -19,7 +19,6 @@
     "tests"
   ],
   "scripts": {
-    "postinstall": "grunt install"
   },
   "dependencies": {
   },

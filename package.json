@@ -2,17 +2,17 @@
   "name": "bc-qr-reader",
   "version": "0.1.0",
   "description": "QR Code reader for AngularJS, powered by Lazarsoft QR parser.",
-  "main": "index.js",
+  "main": "dist/bc-qr-reader.js",
   "dependencies": {
     "grunt": "~0.4.5",
-    "grunt-bower-postinst": "~0.2.1",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-coffee": "^0.12.0"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall" : "grunt install"
   },
   "repository": {
     "type": "git",
