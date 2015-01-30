@@ -1,4 +1,4 @@
-# bc-qr-code
+# bc-qr-reader
 
 QR Code reader directive for AngularJS. 
 
@@ -7,8 +7,12 @@ It uses part of [https://github.com/peekabustudios/webcam-directive](webcam-dire
 ## Installation
 
     npm install --save grunt-contrib-concat grunt-contrib-clean grunt-contrib-coffee
-    npm install https://github.com/Blockchain/bc-qr-code.git
+    npm install https://github.com/Blockchain/bc-qr-reader.git
+
+## Usage
+
+Include dist/bc-qr-reader
 
 ## Development
 
-    git clone https://github.com/Blockchain/bc-qr-code.git --recursive
+    git clone https://github.com/Blockchain/bc-qr-reader.git --recursive

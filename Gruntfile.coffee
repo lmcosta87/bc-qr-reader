@@ -34,7 +34,7 @@ module.exports = (grunt) ->
           'src/webcam.js'
           'build/bc-qr-reader.js'
         ]
-        dest: "dist/bc-qr-code.js" 
+        dest: "dist/bc-qr-reader.js" 
         
     coffee:
       coffee_to_js:
@@ -46,7 +46,8 @@ module.exports = (grunt) ->
         src: ["src/bc-qr-reader.js.coffee"]
         dest: 'build'
         ext: ".js"
-        
+  
+  # If the parent project also uses Grunt, these will be ignored unless you refer to ../../      
   grunt.loadNpmTasks('../../grunt-contrib-concat')
   grunt.loadNpmTasks('../../grunt-contrib-coffee')
   grunt.loadNpmTasks('../../grunt-contrib-clean')
