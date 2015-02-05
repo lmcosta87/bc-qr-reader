@@ -61,16 +61,16 @@ module.exports = (grunt) ->
     
   
   # If the parent project also uses Grunt, these will be ignored unless you refer to ../../      
-  # grunt.loadNpmTasks('../../grunt-contrib-concat')
-  # grunt.loadNpmTasks('../../grunt-contrib-coffee')
-  # grunt.loadNpmTasks('../../grunt-contrib-clean')
-  # grunt.loadNpmTasks('../../grunt-contrib-surround')
+  grunt.loadNpmTasks('../../grunt-contrib-concat')
+  grunt.loadNpmTasks('../../grunt-contrib-coffee')
+  grunt.loadNpmTasks('../../grunt-contrib-clean')
+  grunt.loadNpmTasks('../../grunt-contrib-surround')
   
-  # When running grunt locally:
-  grunt.loadNpmTasks('grunt-contrib-concat')
-  grunt.loadNpmTasks('grunt-contrib-coffee')
-  grunt.loadNpmTasks('grunt-contrib-clean')
-  grunt.loadNpmTasks('grunt-surround')
+  # When developing locally:
+  # grunt.loadNpmTasks('grunt-contrib-concat')
+  # grunt.loadNpmTasks('grunt-contrib-coffee')
+  # grunt.loadNpmTasks('grunt-contrib-clean')
+  # grunt.loadNpmTasks('grunt-surround')
     
   grunt.registerTask "compile", ["coffee"]  
     
