@@ -14,7 +14,7 @@ module.exports = (grunt) ->
       
       bc_qr_reader:  
         src: [
-          'src/stop-ie.js.coffee'
+          'build/src/stop-ie.js'
           'src/jsqrcode/src/grid.js'
           'src/jsqrcode/src/version.js'
           'src/jsqrcode/src/detector.js'
