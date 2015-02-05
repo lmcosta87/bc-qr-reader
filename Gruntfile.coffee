@@ -64,7 +64,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('../../grunt-contrib-concat')
   grunt.loadNpmTasks('../../grunt-contrib-coffee')
   grunt.loadNpmTasks('../../grunt-contrib-clean')
-  grunt.loadNpmTasks('../../grunt-contrib-surround')
+  grunt.loadNpmTasks('../../grunt-surround')
   
   # When developing locally:
   # grunt.loadNpmTasks('grunt-contrib-concat')
