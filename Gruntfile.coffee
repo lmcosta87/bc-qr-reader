@@ -14,6 +14,7 @@ module.exports = (grunt) ->
       
       bc_qr_reader:  
         src: [
+          'src/stop-ie.js.coffee'
           'src/jsqrcode/src/grid.js'
           'src/jsqrcode/src/version.js'
           'src/jsqrcode/src/detector.js'
@@ -43,7 +44,7 @@ module.exports = (grunt) ->
           sourceMap: false
         expand: true
         flatten: false
-        src: ["src/bc-qr-reader.js.coffee"]
+        src: ["src/bc-qr-reader.js.coffee", "src/stop-ie.js.coffee"]
         dest: 'build'
         ext: ".js"
   
