@@ -2548,15 +2548,7 @@ function URShift( number,  bits)
         return number >> bits;
     else
         return (number >> bits) + (2 << ~bits);
-}
-
-
-Array.prototype.remove = function(from, to) {
-  var rest = this.slice((to || from) + 1 || this.length);
-  this.length = from < 0 ? this.length + from : from;
-  return this.push.apply(this, rest);
-};
-;/*
+};/*
   Ported to JavaScript by Lazar Laszlo 2011 
   
   lazarsoft@gmail.com, www.lazarsoft.info
@@ -2986,7 +2978,9 @@ function FinderPatternFinder()
 					//if (Math.abs(pattern.EstimatedModuleSize - average) > 0.2 * average)
                     if (Math.abs(pattern.EstimatedModuleSize - average) > limit)
 					{
-						this.possibleCenters.remove(i);
+            var rest = this.slice((this.possibleCenters) + 1 || this.length);
+            this.length = this.possibleCenters < 0 ? this.length + this.possibleCenters : this.possibleCenters;
+            this.push.apply(this, rest);
 						i--;
 					}
 				}
