@@ -5,7 +5,7 @@
     "Sjors Provoost <sjors@blockchain.com>"
   ],
   "description": "QR Code reader for AngularJS, powered by Lazarsoft QR parser.",
-  "main": "['src/webcam.js', 'src/bc-qr-reader.js.coffee', 'src/bc-qr-reader.jade', 'src/jsqrcode.js']",
+  "main": "dist/bc-qr-reader.js",
   "keywords": [
     "QR"
   ],

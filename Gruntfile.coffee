@@ -56,25 +56,15 @@ module.exports = (grunt) ->
           src: 'build/bc-qr-reader-concat.js'
           dest: 'dist/bc-qr-reader.js'
         }]
-      
-    
-    
   
-  # If the parent project also uses Grunt, these will be ignored unless you refer to ../../      
-  grunt.loadNpmTasks('../../grunt-contrib-concat')
-  grunt.loadNpmTasks('../../grunt-contrib-coffee')
-  grunt.loadNpmTasks('../../grunt-contrib-clean')
-  grunt.loadNpmTasks('../../grunt-surround')
-  
-  # When developing locally:
-  # grunt.loadNpmTasks('grunt-contrib-concat')
-  # grunt.loadNpmTasks('grunt-contrib-coffee')
-  # grunt.loadNpmTasks('grunt-contrib-clean')
-  # grunt.loadNpmTasks('grunt-surround')
+  grunt.loadNpmTasks('grunt-contrib-concat')
+  grunt.loadNpmTasks('grunt-contrib-coffee')
+  grunt.loadNpmTasks('grunt-contrib-clean')
+  grunt.loadNpmTasks('grunt-surround')
     
   grunt.registerTask "compile", ["coffee"]  
     
-  grunt.registerTask "install", [
+  grunt.registerTask "dist", [
     "clean"
     "compile"
     "concat"
