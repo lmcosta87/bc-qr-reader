@@ -2,7 +2,7 @@
 
 QR Code reader directive for AngularJS. 
 
-It uses part of [https://github.com/peekabustudios/webcam-directive](webcam-directive) to access the camera and [https://github.com/LazarSoft/jsqrcode](Lazarsoft QR reader) to process the QR code.
+It uses [https://github.com/jonashartmann/webcam-directive](webcam-directive) to access the camera and [https://github.com/LazarSoft/jsqrcode](Lazarsoft QR reader) to process the QR code.
 
 ## Install
 
@@ -10,7 +10,7 @@ It uses part of [https://github.com/peekabustudios/webcam-directive](webcam-dire
 
 ## Usage
 
-Include `dist/bc-qr-reader.js`
+Include `dist/bc-qr-reader.js` as well as `bower_components/webcam-directive/app/scripts/webcam.js`. Add the `webcam` module to your application.
 
     bc-qr-reader(active="cameraRequested", on-result="processURLfromQR" on-error="onError" camera-status="cameraIsOn")
 

@@ -31,7 +31,6 @@ module.exports = (grunt) ->
           'src/jsqrcode/src/findpat.js'
           'src/jsqrcode/src/alignpat.js'
           'src/jsqrcode/src/databr.js'
-          'src/webcam.js'
           'build/src/bc-qr-reader.js'
         ]
         dest: "build/bc-qr-reader-concat.js" 
