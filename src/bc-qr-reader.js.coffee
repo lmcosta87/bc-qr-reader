@@ -11,9 +11,7 @@ walletApp.directive('bcQrReader', ($timeout) ->
     template: '<div><webcam on-stream="onStream(stream)" on-error="onError(err)" ng-if="active" channel="channel"></webcam><canvas id="qr-canvas"></canvas></div>'
     link: (scope, elem, attrs) ->
       scope.channel = {}
-      
-      qrcode.callback = scope.onResult
-      
+            
       scope.onError = (error) ->
         console.log("Error!")
         console.log(error)
@@ -26,23 +24,28 @@ walletApp.directive('bcQrReader', ($timeout) ->
         scope.lookForQR()
         scope.cameraStatus = true
     
-      scope.lookForQR = () ->    
-        try 
-          canvas = document.getElementById("qr-canvas")
-          video = document.getElementsByTagName("video")[0]
-      
-          if video.videoWidth > 0
-            # This won't be set at the first iteration.
-            canvas.width =  video.videoWidth
-            canvas.height = video.videoHeight
-           
-            canvas.getContext("2d").drawImage(video,0,0)
-      
-          qrcode.decode()
+      scope.lookForQR = () ->  
+        canvas = document.getElementById("qr-canvas")
+        video = document.getElementsByTagName("video")[0]
+    
+        if video? && video.videoWidth > 0
+          # This won't be set at the first iteration.
+          canvas.width =  video.videoWidth
+          canvas.height = video.videoHeight
+         
+          canvas.getContext("2d").drawImage(video,0,0)
+    
+        res = undefined
+        
+        try
+          res = qrcode.decode()
         catch e
-          # $log.error e
           $timeout((->
             scope.lookForQR()
           ), 250)
+                
+        if res?
+          scope.onResult(res)
+          canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);        
   }
 )

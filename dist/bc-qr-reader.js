@@ -3815,7 +3815,6 @@ function QRCodeDataBlockReader(blocks,  version,  numErrorCorrectionCode)
     template: '<div><webcam on-stream="onStream(stream)" on-error="onError(err)" ng-if="active" channel="channel"></webcam><canvas id="qr-canvas"></canvas></div>',
     link: function(scope, elem, attrs) {
       scope.channel = {};
-      qrcode.callback = scope.onResult;
       scope.onError = function(error) {
         console.log("Error!");
         return console.log(error);
@@ -3828,21 +3827,26 @@ function QRCodeDataBlockReader(blocks,  version,  numErrorCorrectionCode)
         return scope.cameraStatus = true;
       };
       return scope.lookForQR = function() {
-        var canvas, e, video;
+        var canvas, e, res, video;
+        canvas = document.getElementById("qr-canvas");
+        video = document.getElementsByTagName("video")[0];
+        if ((video != null) && video.videoWidth > 0) {
+          canvas.width = video.videoWidth;
+          canvas.height = video.videoHeight;
+          canvas.getContext("2d").drawImage(video, 0, 0);
+        }
+        res = void 0;
         try {
-          canvas = document.getElementById("qr-canvas");
-          video = document.getElementsByTagName("video")[0];
-          if (video.videoWidth > 0) {
-            canvas.width = video.videoWidth;
-            canvas.height = video.videoHeight;
-            canvas.getContext("2d").drawImage(video, 0, 0);
-          }
-          return qrcode.decode();
+          res = qrcode.decode();
         } catch (_error) {
           e = _error;
-          return $timeout((function() {
+          $timeout((function() {
             return scope.lookForQR();
           }), 250);
+        }
+        if (res != null) {
+          scope.onResult(res);
+          return canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
         }
       };
     }
