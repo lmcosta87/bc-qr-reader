@@ -1,6 +1,5 @@
 {
   "name": "bc-qr-reader",
-  "version": "0.1.2",
   "authors": [
     "Sjors Provoost <sjors@blockchain.com>"
   ],
@@ -10,7 +9,11 @@
     "QR"
   ],
   "license": "",
-  "private": true,
+  "private": false,
+  "repository" : {
+    "type" : "git",
+    "url" : "git://github.com/blockchain/bc-qr-reader.git"
+  },
   "ignore": [
     "**/.*",
     "node_modules",
