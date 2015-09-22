@@ -3802,7 +3802,9 @@ function QRCodeDataBlockReader(blocks,  version,  numErrorCorrectionCode)
 		return output;
 	});
 }
-;walletApp.directive('bcQrReader', function($timeout) {
+;var bcQrReader;
+
+bcQrReader = function($timeout) {
   return {
     restrict: "E",
     replace: 'true',
@@ -3851,6 +3853,8 @@ function QRCodeDataBlockReader(blocks,  version,  numErrorCorrectionCode)
       };
     }
   };
-});
+};
+
+angular.module('bcQrReader', []).directive('bcQrReader', bcQrReader);
 
 })()
