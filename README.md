@@ -6,20 +6,33 @@ It uses [webcam-directive](https://github.com/jonashartmann/webcam-directive) to
 
 ## Install
 
-    bower install --save blockchain/bc-qr-reader
+```sh
+bower install --save blockchain/bc-qr-reader
+```
 
 ## Usage
 
 Include `dist/bc-qr-reader.js` as well as `bower_components/webcam-directive/app/scripts/webcam.js`. Add the `webcam` module to your application.
 
-    bc-qr-reader(active="cameraRequested", on-result="processURLfromQR" on-error="onError" camera-status="cameraIsOn")
+```html
+<bc-qr-reader 
+  active="cameraRequested"  
+  on-result="processURLfromQR" 
+  on-error="onError" 
+  camera-status="cameraIsOn"
+></bc-qr-reader>
+```
 
 ## Development
 
-    npm install
-    cd src && git clone https://github.com/Sjors/jsqrcode
+```sh
+npm install
+cd src && git clone https://github.com/sjors/jsqrcode
+```
 
 ## Update bower package
 
-    npm install
-    grunt dist
+```sh
+npm install
+grunt dist
+```
