@@ -12,10 +12,10 @@ bower install --save blockchain/bc-qr-reader
 
 ## Demo
 
-See it live in this [Plunker](http://embed.plnkr.co/m9dtF9llcAw7eYE94b5k/preview).
+See it live in this [Plunker](https://embed.plnkr.co/m9dtF9llcAw7eYE94b5k/preview).
 
 Your browser won't permit using the camera when looking at a local file, so the following won't work:
-clone this repository, run `bower install` and open demo/index.html in a browser.
+clone this repository, run `bower install` and open demo/index.html in a browser. Also note that HTTPS is required, so [this](http://embed.plnkr.co/m9dtF9llcAw7eYE94b5k/preview) won't work.
 
 ## Usage
 
