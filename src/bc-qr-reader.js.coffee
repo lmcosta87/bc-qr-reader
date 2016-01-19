@@ -13,9 +13,8 @@ bcQrReader = ($timeout) ->
     link: (scope, elem, attrs) ->
       scope.channel = {}
 
-      scope.onError = (error) ->
-        console.log("Error!")
-        console.log(error)
+      if !scope.onError
+        scope.onError = (error) -> console.log error
 
       scope.onStream = (stream) ->
         # Evil (TODO: use a directive to manipulate the DOM or try to use scope.channel):
@@ -25,7 +24,7 @@ bcQrReader = ($timeout) ->
         scope.lookForQR()
         scope.cameraStatus = true
 
-      scope.lookForQR = () ->  
+      scope.lookForQR = () ->
         canvas = document.getElementById("qr-canvas")
         video = document.getElementsByTagName("video")[0]
 
@@ -47,10 +46,9 @@ bcQrReader = ($timeout) ->
 
         if res?
           scope.onResult(res)
-          canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);        
+          canvas.getContext("2d").clearRect(0, 0, canvas.width, canvas.height);
   }
 
 angular
   .module('bcQrReader', [])
   .directive('bcQrReader', bcQrReader)
-

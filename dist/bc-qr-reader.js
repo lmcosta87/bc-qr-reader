@@ -3817,10 +3817,11 @@ bcQrReader = function($timeout) {
     template: '<div><webcam on-stream="onStream(stream)" on-error="onError(err)" ng-if="active" channel="channel"></webcam><canvas id="qr-canvas"></canvas></div>',
     link: function(scope, elem, attrs) {
       scope.channel = {};
-      scope.onError = function(error) {
-        console.log("Error!");
-        return console.log(error);
-      };
+      if (!scope.onError) {
+        scope.onError = function(error) {
+          return console.log(error);
+        };
+      }
       scope.onStream = function(stream) {
         var canvas;
         canvas = document.getElementById("qr-canvas");
