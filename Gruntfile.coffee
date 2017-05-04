@@ -50,7 +50,7 @@ module.exports = (grunt) ->
       wraps: 
         options: 
           prepend: '(function() { if (/internet explorer/i.test(window.navigator.userAgent) || /MSIE/i.test(window.navigator.userAgent)) { return; }',
-          append: '})()'
+          append: '})();'
         files: [{
           src: 'build/bc-qr-reader-concat.js'
           dest: 'dist/bc-qr-reader.js'

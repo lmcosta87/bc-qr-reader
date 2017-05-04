@@ -51,4 +51,4 @@ bcQrReader = ($timeout) ->
 
 angular
   .module('bcQrReader', [])
-  .directive('bcQrReader', ['$timeout', bcQrReader])
+  .directive('bcQrReader', ['$timeout', bcQrReader]);
